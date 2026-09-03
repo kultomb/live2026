@@ -2,6 +2,7 @@ package com.liveproduction.feature.diagnostics
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import com.liveproduction.core.camera.CameraManager
 import com.liveproduction.core.camera.model.CameraCapability
 import com.liveproduction.core.diagnostics.DiagnosticsManager
@@ -9,7 +10,9 @@ import com.liveproduction.core.diagnostics.model.DeviceCapabilityReport
 import com.liveproduction.core.media.model.VideoSourceType
 import com.liveproduction.core.usb.UsbCaptureManager
 import com.liveproduction.core.usb.model.UsbDeviceStatus
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class DiagnosticsViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -26,9 +29,11 @@ class DiagnosticsViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun refreshDiagnostics() {
-        cameraManager.detectCapabilities(getApplication())
-        usbCaptureManager.inspectAttachedDevices(getApplication())
-        diagnosticsManager.updateMetrics(getApplication())
-        diagnosticsManager.generateFullReport(getApplication())
+        viewModelScope.launch(Dispatchers.IO) {
+            cameraManager.detectCapabilities(getApplication())
+            usbCaptureManager.inspectAttachedDevices(getApplication())
+            diagnosticsManager.updateMetrics(getApplication())
+            diagnosticsManager.generateFullReport(getApplication())
+        }
     }
 }

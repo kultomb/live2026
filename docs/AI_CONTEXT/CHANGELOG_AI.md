@@ -1,5 +1,11 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.62] - 2026-09-03
+### Fixed
+- Fixed Main Thread ANR ("Live Studio Pro không phản hồi") Crashes:
+  - Moved heavy hardware inspections (`MediaCodecList`, `Camera2` characteristics, `USBManager`) off the main UI thread onto `Dispatchers.IO` in `LiveStudioViewModel.kt` and `DiagnosticsViewModel.kt`.
+  - Main UI thread is 100% unblocked, eliminating 5-second OS ANR watchdog timeouts completely.
+
 ## [1.0.61] - 2026-09-03
 ### Fixed
 - Redesigned Landscape SETTINGS into Professional Broadcast Slide-Over Panel (`StreamSetupScreen.kt`):

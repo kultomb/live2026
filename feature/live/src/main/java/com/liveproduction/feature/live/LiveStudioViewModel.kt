@@ -2,6 +2,7 @@ package com.liveproduction.feature.live
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
 import com.liveproduction.core.audio.AudioManager
 import com.liveproduction.core.audio.MicAudioRecorder
 import com.liveproduction.core.camera.CameraManager
@@ -15,7 +16,9 @@ import com.liveproduction.core.network.NetworkManager
 import com.liveproduction.core.streaming.LiveSessionManager
 import com.liveproduction.core.streaming.model.LiveSessionState
 import com.liveproduction.core.usb.UsbCaptureManager
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import java.io.File
 
 class LiveStudioViewModel(application: Application) : AndroidViewModel(application) {
@@ -70,12 +73,14 @@ class LiveStudioViewModel(application: Application) : AndroidViewModel(applicati
             }
         })
 
-        // Run initial capability discovery & start mic audio capture
-        cameraManager.detectCapabilities(application)
-        usbCaptureManager.inspectAttachedDevices(application)
-        networkManager.updateNetworkState(application)
-        diagnosticsManager.updateMetrics(application)
-        audioManager.startMicAudioRecording(application)
+        // Run initial hardware capability discovery & mic recording on background Dispatchers.IO to prevent Main UI Thread ANR
+        viewModelScope.launch(Dispatchers.IO) {
+            cameraManager.detectCapabilities(application)
+            usbCaptureManager.inspectAttachedDevices(application)
+            networkManager.updateNetworkState(application)
+            diagnosticsManager.updateMetrics(application)
+            audioManager.startMicAudioRecording(application)
+        }
     }
 
     fun onSourceSelected(sourceType: VideoSourceType) {
