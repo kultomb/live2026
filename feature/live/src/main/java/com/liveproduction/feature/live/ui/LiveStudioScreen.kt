@@ -1,5 +1,6 @@
 package com.liveproduction.feature.live.ui
 
+import android.app.Activity
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import androidx.compose.foundation.background
@@ -15,12 +16,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.zIndex
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.liveproduction.core.media.VideoPipelineManager
 import com.liveproduction.core.media.model.VideoSourceType
 import com.liveproduction.core.media.recording.RecordingState
@@ -66,90 +71,123 @@ fun LiveStudioScreen(
 
     var isFullscreenPreview by remember { mutableStateOf(false) }
 
+    // Toggle Android System Status Bar & Navigation Bar Immersive Mode during Fullscreen Preview
+    val context = LocalContext.current
+    DisposableEffect(isFullscreenPreview) {
+        val window = (context as? Activity)?.window
+        if (window != null) {
+            val controller = WindowCompat.getInsetsController(window, window.decorView)
+            if (isFullscreenPreview) {
+                controller.hide(WindowInsetsCompat.Type.systemBars())
+                controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            } else {
+                controller.show(WindowInsetsCompat.Type.systemBars())
+            }
+        }
+        onDispose {}
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(BackgroundCanvas)
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(BackgroundCanvas)
-        ) {
-            // Main Production Column (Left / Middle 80%)
-            Column(
+        if (isFullscreenPreview) {
+            // 100% Edge-to-Edge True Immersive Fullscreen Monitor (All buttons & bars hidden)
+            Box(
                 modifier = Modifier
-                    .weight(1f)
-                    .fillMaxHeight()
-                    .padding(8.dp)
+                    .fillMaxSize()
+                    .background(Color.Black)
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = null
+                    ) {
+                        // 1-Tap anywhere in Fullscreen mode immediately returns to main studio screen
+                        isFullscreenPreview = false
+                    },
+                contentAlignment = Alignment.Center
             ) {
-                // Top Broadcast Bar
-                TopBroadcastBar(
-                    sessionState = sessionState,
-                    recordingState = recordingState,
-                    recordedDurationMs = recordedDurationMs,
-                    currentFps = currentFps,
-                    batteryPercent = healthMetrics.batteryPercent,
-                    thermalStatus = healthMetrics.thermalStatus,
-                    onOpenSettings = onOpenSettings,
-                    onOpenDiagnostics = onOpenDiagnostics
+                AndroidView(
+                    factory = { ctx ->
+                        SurfaceView(ctx).apply {
+                            holder.addCallback(object : SurfaceHolder.Callback {
+                                override fun surfaceCreated(holder: SurfaceHolder) {
+                                    val surface = holder.surface
+                                    VideoPipelineManager.getInstance().onPreviewSurfaceAvailable(surface)
+                                }
+
+                                override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {}
+
+                                override fun surfaceDestroyed(holder: SurfaceHolder) {
+                                    VideoPipelineManager.getInstance().onPreviewSurfaceDestroyed()
+                                }
+                            })
+                        }
+                    },
+                    modifier = Modifier.fillMaxSize()
                 )
+            }
+        } else {
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(BackgroundCanvas)
+            ) {
+                // Main Production Column (Left / Middle 80%)
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxHeight()
+                        .padding(8.dp)
+                ) {
+                    // Top Broadcast Bar
+                    TopBroadcastBar(
+                        sessionState = sessionState,
+                        recordingState = recordingState,
+                        recordedDurationMs = recordedDurationMs,
+                        currentFps = currentFps,
+                        batteryPercent = healthMetrics.batteryPercent,
+                        thermalStatus = healthMetrics.thermalStatus,
+                        onOpenSettings = onOpenSettings,
+                        onOpenDiagnostics = onOpenDiagnostics
+                    )
 
-                Spacer(modifier = Modifier.height(6.dp))
+                    Spacer(modifier = Modifier.height(6.dp))
 
-                // Persistent Main Video Surface Viewport Box
-                Box(
-                    modifier = if (isFullscreenPreview) {
-                        Modifier
-                            .fillMaxSize()
-                            .zIndex(99999f)
-                            .background(Color.Black)
-                            .clickable(
-                                interactionSource = remember { MutableInteractionSource() },
-                                indication = null
-                            ) {
-                                // 1-Tap anywhere in Fullscreen mode immediately returns to main studio screen
-                                isFullscreenPreview = false
-                            }
-                    } else {
-                        Modifier
+                    // Persistent Main Video Surface Viewport Box
+                    Box(
+                        modifier = Modifier
                             .weight(1f)
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(8.dp))
                             .background(SurfacePanel)
-                            .border(1.dp, BorderDivider, RoundedCornerShape(8.dp))
-                    },
-                    contentAlignment = Alignment.Center
-                ) {
-                    // Single Immutable SurfaceView Native Hardware Layer with Exact 16:9 Broadcast Aspect Ratio
-                    AndroidView(
-                        factory = { context ->
-                            SurfaceView(context).apply {
-                                holder.addCallback(object : SurfaceHolder.Callback {
-                                    override fun surfaceCreated(holder: SurfaceHolder) {
-                                        val surface = holder.surface
-                                        VideoPipelineManager.getInstance().onPreviewSurfaceAvailable(surface)
-                                    }
+                            .border(1.dp, BorderDivider, RoundedCornerShape(8.dp)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        // Single Immutable SurfaceView Native Hardware Layer with Exact 16:9 Broadcast Aspect Ratio
+                        AndroidView(
+                            factory = { ctx ->
+                                SurfaceView(ctx).apply {
+                                    holder.addCallback(object : SurfaceHolder.Callback {
+                                        override fun surfaceCreated(holder: SurfaceHolder) {
+                                            val surface = holder.surface
+                                            VideoPipelineManager.getInstance().onPreviewSurfaceAvailable(surface)
+                                        }
 
-                                    override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {}
+                                        override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {}
 
-                                    override fun surfaceDestroyed(holder: SurfaceHolder) {
-                                        VideoPipelineManager.getInstance().onPreviewSurfaceDestroyed()
-                                    }
-                                })
-                            }
-                        },
-                        modifier = if (isFullscreenPreview) {
-                            Modifier.fillMaxSize()
-                        } else {
-                            Modifier
+                                        override fun surfaceDestroyed(holder: SurfaceHolder) {
+                                            VideoPipelineManager.getInstance().onPreviewSurfaceDestroyed()
+                                        }
+                                    })
+                                }
+                            },
+                            modifier = Modifier
                                 .fillMaxHeight()
                                 .aspectRatio(16f / 9f)
                                 .clip(RoundedCornerShape(8.dp))
-                        }
-                    )
+                        )
 
-                    if (!isFullscreenPreview) {
                         // Fullscreen Toggle Icon Button (⛶)
                         Box(
                             modifier = Modifier
@@ -167,28 +205,28 @@ fun LiveStudioScreen(
                             Text(text = "⛶", fontSize = 16.sp, color = TextPrimary, fontWeight = FontWeight.Bold)
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(6.dp))
+
+                    // Bottom Video Source Switcher Dock
+                    SourceSwitcherDock(
+                        activeSource = activeSource,
+                        onSourceSelected = { viewModel.onSourceSelected(it) }
+                    )
                 }
 
-                Spacer(modifier = Modifier.height(6.dp))
-
-                // Bottom Video Source Switcher Dock
-                SourceSwitcherDock(
-                    activeSource = activeSource,
-                    onSourceSelected = { viewModel.onSourceSelected(it) }
+                // Right Control Sidebar (VU Meters, REC Button & Go Live Button 20%)
+                ControlSidebar(
+                    sessionState = sessionState,
+                    recordingState = recordingState,
+                    recordedDurationMs = recordedDurationMs,
+                    audioMeterMuted = audioMeter.isMuted,
+                    audioLevelPercent = audioMeter.levelPercent,
+                    onGoLiveClicked = { viewModel.onGoLiveToggled() },
+                    onRecordClicked = { viewModel.onRecordToggled() },
+                    onMuteToggled = { viewModel.onAudioMuteToggled() }
                 )
             }
-
-            // Right Control Sidebar (VU Meters, REC Button & Go Live Button 20%)
-            ControlSidebar(
-                sessionState = sessionState,
-                recordingState = recordingState,
-                recordedDurationMs = recordedDurationMs,
-                audioMeterMuted = audioMeter.isMuted,
-                audioLevelPercent = audioMeter.levelPercent,
-                onGoLiveClicked = { viewModel.onGoLiveToggled() },
-                onRecordClicked = { viewModel.onRecordToggled() },
-                onMuteToggled = { viewModel.onAudioMuteToggled() }
-            )
         }
     }
 }

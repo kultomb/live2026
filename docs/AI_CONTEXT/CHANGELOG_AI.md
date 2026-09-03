@@ -1,5 +1,12 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.55] - 2026-09-03
+### Fixed
+- Fixed Fullscreen Preview Mode in `LiveStudioScreen.kt`:
+  - Integrated `WindowCompat.getInsetsController` to automatically hide Android system status bar and navigation bar (Immersive Sticky Mode) during fullscreen mode.
+  - Completely hides all UI components (Top broadcast bar, VU meters sidebar, camera switcher dock, and buttons).
+  - 100% Edge-to-Edge camera preview fills the entire physical phone display. 1-Tap gesture anywhere on the screen exits fullscreen mode and restores studio controls.
+
 ## [1.0.54] - 2026-09-03
 ### Fixed
 - Fixed Camera SurfaceView Aspect Ratio Distortion Bug in `LiveStudioScreen.kt`:
