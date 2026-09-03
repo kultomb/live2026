@@ -9,13 +9,28 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
+import com.liveproduction.feature.diagnostics.DiagnosticsViewModel
+import com.liveproduction.feature.diagnostics.ui.DiagnosticsScreen
 import com.liveproduction.feature.live.LiveStudioViewModel
 import com.liveproduction.feature.live.ui.LiveStudioScreen
+import com.liveproduction.feature.settings.StreamSetupViewModel
+import com.liveproduction.feature.settings.ui.StreamSetupScreen
+
+private enum class AppScreen {
+    STUDIO,
+    SETTINGS,
+    DIAGNOSTICS
+}
 
 class MainActivity : ComponentActivity() {
 
-    private val viewModel: LiveStudioViewModel by viewModels()
+    private val studioViewModel: LiveStudioViewModel by viewModels()
+    private val settingsViewModel: StreamSetupViewModel by viewModels()
+    private val diagnosticsViewModel: DiagnosticsViewModel by viewModels()
 
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -38,15 +53,29 @@ class MainActivity : ComponentActivity() {
         requestRequiredPermissions()
 
         setContent {
-            LiveStudioScreen(
-                viewModel = viewModel,
-                onOpenSettings = {
-                    Toast.makeText(this, "Opening Stream Settings...", Toast.LENGTH_SHORT).show()
-                },
-                onOpenDiagnostics = {
-                    Toast.makeText(this, "Opening System Diagnostics...", Toast.LENGTH_SHORT).show()
+            var currentScreen by remember { mutableStateOf(AppScreen.STUDIO) }
+
+            when (currentScreen) {
+                AppScreen.STUDIO -> {
+                    LiveStudioScreen(
+                        viewModel = studioViewModel,
+                        onOpenSettings = { currentScreen = AppScreen.SETTINGS },
+                        onOpenDiagnostics = { currentScreen = AppScreen.DIAGNOSTICS }
+                    )
                 }
-            )
+                AppScreen.SETTINGS -> {
+                    StreamSetupScreen(
+                        viewModel = settingsViewModel,
+                        onBack = { currentScreen = AppScreen.STUDIO }
+                    )
+                }
+                AppScreen.DIAGNOSTICS -> {
+                    DiagnosticsScreen(
+                        viewModel = diagnosticsViewModel,
+                        onBack = { currentScreen = AppScreen.STUDIO }
+                    )
+                }
+            }
         }
     }
 

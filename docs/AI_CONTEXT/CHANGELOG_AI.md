@@ -1,5 +1,13 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.56] - 2026-09-03
+### Fixed
+- Fixed Screen Navigation in `MainActivity.kt`:
+  - Replaced temporary Toast handlers with active Compose state routing (`AppScreen.STUDIO`, `AppScreen.SETTINGS`, `AppScreen.DIAGNOSTICS`).
+  - Tapping **SETTINGS** button transitions to full `StreamSetupScreen` (Resolution, Bitrate Slider, Audio Bitrate, Stream Key).
+  - Tapping **DIAG** button transitions to full `DiagnosticsScreen` (Upload Speed, Ping Latency, MediaCodec Specs).
+  - Tapping Back button or **SAVE CONFIGURATION** returns seamlessly to `LiveStudioScreen`.
+
 ## [1.0.55] - 2026-09-03
 ### Fixed
 - Fixed Fullscreen Preview Mode in `LiveStudioScreen.kt`:
