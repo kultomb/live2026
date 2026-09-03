@@ -48,7 +48,6 @@
         android:icon="@android:drawable/ic_menu_camera"
         android:label="Live Studio Pro"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
             android:name="com.liveproduction.studio.MainActivity"

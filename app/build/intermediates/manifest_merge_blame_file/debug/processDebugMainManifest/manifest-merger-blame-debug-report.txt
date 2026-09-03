@@ -89,125 +89,124 @@
 49-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:34:9-40
 50        android:supportsRtl="true"
 50-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:35:9-35
-51        android:testOnly="true"
-52        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-52-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:36:9-67
-53        <activity
-53-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:39:9-57:20
-54            android:name="com.liveproduction.studio.MainActivity"
-54-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:40:13-41
-55            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-55-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:42:13-87
-56            android:exported="true"
-56-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:41:13-36
-57            android:screenOrientation="landscape"
-57-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:43:13-50
-58            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-58-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:44:13-71
-59            <intent-filter>
-59-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:45:13-48:29
-60                <action android:name="android.intent.action.MAIN" />
-60-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:46:17-69
-60-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:46:25-66
-61
-62                <category android:name="android.intent.category.LAUNCHER" />
-62-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:47:17-77
-62-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:47:27-74
-63            </intent-filter>
-64
-65            <!-- USB Device Attached Intent Filter -->
-66            <intent-filter>
-66-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:51:13-53:29
-67                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-67-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:52:17-90
-67-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:52:25-87
-68            </intent-filter>
-69
-70            <meta-data
-70-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:54:13-56:57
-71                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-71-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:55:17-79
-72                android:resource="@xml/device_filter" />
-72-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:56:17-54
-73        </activity>
-74
-75        <!-- Live Streaming Foreground Service -->
-76        <service
-76-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:60:9-64:81
-77            android:name="com.liveproduction.core.streaming.service.LiveStreamingService"
-77-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:61:13-90
-78            android:enabled="true"
-78-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:62:13-35
-79            android:exported="false"
-79-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:63:13-37
-80            android:foregroundServiceType="camera|connectedDevice|microphone" />
-80-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:64:13-78
-81
-82        <provider
-82-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-83            android:name="androidx.startup.InitializationProvider"
-83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-84            android:authorities="com.liveproduction.studio.androidx-startup"
-84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-85            android:exported="false" >
-85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-86            <meta-data
-86-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-87-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-88                android:value="androidx.startup" />
-88-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-89            <meta-data
-89-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\CMD\.gradle\caches\8.10\transforms\12fccf30f074324e59dd13b173941b5b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
-90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-90-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\CMD\.gradle\caches\8.10\transforms\12fccf30f074324e59dd13b173941b5b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
-91                android:value="androidx.startup" />
-91-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\CMD\.gradle\caches\8.10\transforms\12fccf30f074324e59dd13b173941b5b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
-92            <meta-data
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-93                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-94                android:value="androidx.startup" />
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-95        </provider>
-96
-97        <receiver
-97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-98            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-99            android:directBootAware="false"
-99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-100            android:enabled="true"
-100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-101            android:exported="true"
-101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-102            android:permission="android.permission.DUMP" >
-102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-104                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-107                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-108            </intent-filter>
-109            <intent-filter>
-109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-110                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-110-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-111            </intent-filter>
-112            <intent-filter>
-112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-113                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-113-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-114            </intent-filter>
-115        </receiver>
-116    </application>
-117
-118</manifest>
+51        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+51-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:36:9-67
+52        <activity
+52-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:39:9-57:20
+53            android:name="com.liveproduction.studio.MainActivity"
+53-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:40:13-41
+54            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+54-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:42:13-87
+55            android:exported="true"
+55-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:41:13-36
+56            android:screenOrientation="landscape"
+56-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:43:13-50
+57            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+57-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:44:13-71
+58            <intent-filter>
+58-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:45:13-48:29
+59                <action android:name="android.intent.action.MAIN" />
+59-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:46:17-69
+59-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:46:25-66
+60
+61                <category android:name="android.intent.category.LAUNCHER" />
+61-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:47:17-77
+61-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:47:27-74
+62            </intent-filter>
+63
+64            <!-- USB Device Attached Intent Filter -->
+65            <intent-filter>
+65-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:51:13-53:29
+66                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+66-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:52:17-90
+66-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:52:25-87
+67            </intent-filter>
+68
+69            <meta-data
+69-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:54:13-56:57
+70                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+70-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:55:17-79
+71                android:resource="@xml/device_filter" />
+71-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:56:17-54
+72        </activity>
+73
+74        <!-- Live Streaming Foreground Service -->
+75        <service
+75-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:60:9-64:81
+76            android:name="com.liveproduction.core.streaming.service.LiveStreamingService"
+76-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:61:13-90
+77            android:enabled="true"
+77-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:62:13-35
+78            android:exported="false"
+78-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:63:13-37
+79            android:foregroundServiceType="camera|connectedDevice|microphone" />
+79-->C:\Users\CMD\Desktop\LIVE 2026\app\src\main\AndroidManifest.xml:64:13-78
+80
+81        <provider
+81-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+82            android:name="androidx.startup.InitializationProvider"
+82-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+83            android:authorities="com.liveproduction.studio.androidx-startup"
+83-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+84            android:exported="false" >
+84-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+85            <meta-data
+85-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+86                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+86-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+87                android:value="androidx.startup" />
+87-->[androidx.emoji2:emoji2:1.3.0] C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+88            <meta-data
+88-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\CMD\.gradle\caches\8.10\transforms\12fccf30f074324e59dd13b173941b5b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:29:13-31:52
+89                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+89-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\CMD\.gradle\caches\8.10\transforms\12fccf30f074324e59dd13b173941b5b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:30:17-78
+90                android:value="androidx.startup" />
+90-->[androidx.lifecycle:lifecycle-process:2.8.4] C:\Users\CMD\.gradle\caches\8.10\transforms\12fccf30f074324e59dd13b173941b5b\transformed\lifecycle-process-2.8.4\AndroidManifest.xml:31:17-49
+91            <meta-data
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+92                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+93                android:value="androidx.startup" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+94        </provider>
+95
+96        <receiver
+96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+97            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+97-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+98            android:directBootAware="false"
+98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+99            android:enabled="true"
+99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+100            android:exported="true"
+100-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+101            android:permission="android.permission.DUMP" >
+101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+102            <intent-filter>
+102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+103                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+103-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+104            </intent-filter>
+105            <intent-filter>
+105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+106                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+107            </intent-filter>
+108            <intent-filter>
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+109                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+110            </intent-filter>
+111            <intent-filter>
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+112                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+113            </intent-filter>
+114        </receiver>
+115    </application>
+116
+117</manifest>

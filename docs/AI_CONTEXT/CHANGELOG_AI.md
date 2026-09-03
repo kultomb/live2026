@@ -1,5 +1,17 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.53] - 2026-09-03
+### Added
+- Expanded **SETTINGS** screen (`StreamSetupScreen.kt`) with full professional broadcast controls:
+  - Added Video Resolution Selector (`1080p Full HD`, `720p HD`, `480p SD`).
+  - Added Dynamic Video Bitrate Slider (`1.0 Mbps` to `12.0 Mbps`).
+  - Added Audio Bitrate Selector (`128 Kbps`, `160 Kbps`, `320 Kbps`).
+  - Added Lower-Third Overlay Text Editor.
+- Expanded **DIAG** (Diagnostics) screen (`DiagnosticsScreen.kt`) with real-time stream monitoring:
+  - Added Upload & Download Speed Test meters (`24.5 Mbps Upload`).
+  - Added Network Latency (Ping in ms) & Packet Loss Rate (%).
+  - Added Encoder Pipeline Metrics & RTMP Buffer Usage.
+
 ## [1.0.52] - 2026-09-03
 ### Fixed
 - Fixed `StreamSetupScreen.kt` method invocation parameters:

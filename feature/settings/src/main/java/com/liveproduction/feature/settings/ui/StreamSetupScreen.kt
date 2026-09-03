@@ -42,6 +42,8 @@ fun StreamSetupScreen(
 ) {
     var selectedPlatform by remember { mutableStateOf(SocialPlatformType.YOUTUBE) }
     var selectedProfile by remember { mutableStateOf(StreamProfile.PROFILE_1080P_30) }
+    var customBitrateMbps by remember { mutableFloatStateOf(4.5f) }
+    var selectedAudioBitrateKbps by remember { mutableIntStateOf(128) }
     var rtmpUrlInput by remember { mutableStateOf(selectedPlatform.defaultUrl) }
     var streamKeyInput by remember { mutableStateOf("") }
     var bannerTextInput by remember { mutableStateOf("LIVE PRODUCTION HD") }
@@ -52,7 +54,7 @@ fun StreamSetupScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "RTMP BROADCAST SETUP",
+                        text = "BROADCAST SETTINGS & ENCODER CONFIG",
                         fontWeight = FontWeight.Bold,
                         fontFamily = FontFamily.Monospace,
                         color = TextPrimary
@@ -110,7 +112,91 @@ fun StreamSetupScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             item {
-                CardPanel(title = "STREAM DESTINATION PLATFORM") {
+                CardPanel(title = "1. VIDEO RESOLUTION & QUALITY PROFILE") {
+                    StreamProfile.entries.forEach { prof ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            RadioButton(
+                                selected = (selectedProfile == prof),
+                                onClick = {
+                                    selectedProfile = prof
+                                    customBitrateMbps = prof.bitrateBps / 1_000_000f
+                                },
+                                colors = RadioButtonDefaults.colors(selectedColor = AccentBlue)
+                            )
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(text = prof.displayName, color = TextPrimary, fontSize = 13.sp, fontFamily = FontFamily.Monospace)
+                        }
+                    }
+                }
+            }
+
+            item {
+                CardPanel(title = "2. DYNAMIC VIDEO BITRATE ADJUSTMENT (DYNAMIC ENCODER)") {
+                    Column {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Text(text = "Video Bitrate Target:", color = TextSecondary, fontSize = 13.sp)
+                            Text(
+                                text = "${String.format("%.1f", customBitrateMbps)} Mbps (${(customBitrateMbps * 1000).toInt()} Kbps)",
+                                color = AccentBlue,
+                                fontSize = 13.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = FontFamily.Monospace
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Slider(
+                            value = customBitrateMbps,
+                            onValueChange = { customBitrateMbps = it },
+                            valueRange = 1.0f..12.0f,
+                            steps = 22,
+                            colors = SliderDefaults.colors(
+                                thumbColor = AccentBlue,
+                                activeTrackColor = AccentBlue
+                            )
+                        )
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Text(text = "1.0 Mbps (Low)", fontSize = 11.sp, color = TextSecondary)
+                            Text(text = "4.5 Mbps (1080p)", fontSize = 11.sp, color = ReadyGreen)
+                            Text(text = "12.0 Mbps (Ultra)", fontSize = 11.sp, color = TextSecondary)
+                        }
+                    }
+                }
+            }
+
+            item {
+                CardPanel(title = "3. AUDIO QUALITY BITRATE (AAC-LC STEREO)") {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        listOf(128, 160, 320).forEach { bitrateKbps ->
+                            FilterChip(
+                                selected = (selectedAudioBitrateKbps == bitrateKbps),
+                                onClick = { selectedAudioBitrateKbps = bitrateKbps },
+                                label = { Text("$bitrateKbps Kbps", fontSize = 12.sp, fontFamily = FontFamily.Monospace) },
+                                colors = FilterChipDefaults.filterChipColors(
+                                    selectedContainerColor = AccentBlue,
+                                    selectedLabelColor = Color.White
+                                )
+                            )
+                        }
+                    }
+                }
+            }
+
+            item {
+                CardPanel(title = "4. STREAM DESTINATION PLATFORM") {
                     SocialPlatformType.entries.forEach { platform ->
                         Row(
                             modifier = Modifier
@@ -135,7 +221,7 @@ fun StreamSetupScreen(
             }
 
             item {
-                CardPanel(title = "RTMP ENDPOINT & ENCRYPTED STREAM KEY") {
+                CardPanel(title = "5. RTMP ENDPOINT & ENCRYPTED STREAM KEY") {
                     OutlinedTextField(
                         value = rtmpUrlInput,
                         onValueChange = { rtmpUrlInput = it },
@@ -163,28 +249,7 @@ fun StreamSetupScreen(
             }
 
             item {
-                CardPanel(title = "ENCODER QUALITY PROFILE") {
-                    StreamProfile.entries.forEach { prof ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(vertical = 4.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            RadioButton(
-                                selected = (selectedProfile == prof),
-                                onClick = { selectedProfile = prof },
-                                colors = RadioButtonDefaults.colors(selectedColor = AccentBlue)
-                            )
-                            Spacer(modifier = Modifier.width(8.dp))
-                            Text(text = prof.displayName, color = TextPrimary, fontSize = 13.sp, fontFamily = FontFamily.Monospace)
-                        }
-                    }
-                }
-            }
-
-            item {
-                CardPanel(title = "LOWER-THIRD GRAPHIC BANNER") {
+                CardPanel(title = "6. LOWER-THIRD GRAPHIC BANNER OVERLAY") {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         OutlinedTextField(
                             value = bannerTextInput,
