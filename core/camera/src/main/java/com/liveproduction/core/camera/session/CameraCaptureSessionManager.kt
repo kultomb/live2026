@@ -35,7 +35,8 @@ class CameraCaptureSessionManager(private val context: Context) {
         cameraId: String,
         targetSurface: Surface,
         encoderSurface: Surface? = null,
-        zoomRatio: Float = 1.0f
+        zoomRatio: Float = 1.0f,
+        sensorOrientation: Int = 90
     ) {
         startBackgroundThread()
         currentControls = currentControls.copy(zoomRatio = zoomRatio)
@@ -44,7 +45,7 @@ class CameraCaptureSessionManager(private val context: Context) {
         activeDisplaySurface = targetSurface
         activeEncoderSurface = encoderSurface
 
-        Log.i(TAG, "Opening Camera2 ID: $cameraId (Display + ${if (encoderSurface != null) "Encoder" else "No Encoder"}) with zoom ${zoomRatio}x...")
+        Log.i(TAG, "Opening Camera2 ID: $cameraId (Display + ${if (encoderSurface != null) "Encoder" else "No Encoder"}) with zoom ${zoomRatio}x, orientation ${sensorOrientation}°...")
         closeCameraInternal()
 
         val systemCameraManager = context.getSystemService(Context.CAMERA_SERVICE) as? CameraManager ?: return
@@ -53,7 +54,7 @@ class CameraCaptureSessionManager(private val context: Context) {
                 override fun onOpened(camera: CameraDevice) {
                     Log.i(TAG, "CameraDevice $cameraId opened successfully")
                     cameraDevice = camera
-                    createCaptureSession(camera, targetSurface, encoderSurface, zoomRatio)
+                    createCaptureSession(camera, targetSurface, encoderSurface, zoomRatio, sensorOrientation)
                 }
 
                 override fun onDisconnected(camera: CameraDevice) {
@@ -77,7 +78,8 @@ class CameraCaptureSessionManager(private val context: Context) {
         camera: CameraDevice,
         displaySurface: Surface,
         encoderSurface: Surface?,
-        zoomRatio: Float
+        zoomRatio: Float,
+        sensorOrientation: Int
     ) {
         try {
             val targets = mutableListOf<Surface>(displaySurface)

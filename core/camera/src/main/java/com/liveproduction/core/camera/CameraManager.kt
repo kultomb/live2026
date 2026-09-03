@@ -152,8 +152,8 @@ class CameraManager private constructor() {
             else -> 1.0f
         }
 
-        Log.i(TAG, "Opening Camera2 ID: ${cap.cameraId} for source: ${sourceType.name} with target zoom: ${targetZoom}x (Encoder: ${activeEncoderSurface != null})")
-        sessionManager?.openCamera(cap.cameraId, targetSurface, activeEncoderSurface, targetZoom)
+        Log.i(TAG, "Opening Camera2 ID: ${cap.cameraId} for source: ${sourceType.name} with target zoom: ${targetZoom}x, orientation: ${cap.sensorOrientation}° (Encoder: ${activeEncoderSurface != null})")
+        sessionManager?.openCamera(cap.cameraId, targetSurface, activeEncoderSurface, targetZoom, cap.sensorOrientation)
     }
 
     fun updateZoom(zoomRatio: Float) {

@@ -1,5 +1,19 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.59] - 2026-09-03
+### Fixed
+- Fixed Camera Session Crash in `CameraCaptureSessionManager.kt`:
+  - Removed invalid `JPEG_ORIENTATION` setting from repeating video preview request (`TEMPLATE_RECORD`), eliminating `IllegalArgumentException` HAL3 driver crashes.
+- Fixed Status Bar Overlap in `LiveStudioScreen.kt`:
+  - Added explicit `padding(top = 32.dp)` to the main Studio layout row.
+  - Result: Top broadcast bar (`IDLE`, `30 FPS`, `DIAG`, `SETTINGS`) is ALWAYS pushed down 32dp below the Android status bar (`22:18` time & WiFi icons). Zero text cut off!
+
+## [1.0.58] - 2026-09-03
+### Fixed
+- Fixed Top Bar Cutout Overlap & Sideways Camera Orientation Bugs:
+  - Applied explicit `statusBarsPadding()` to main production column in `LiveStudioScreen.kt`. Guarantees top bar (`IDLE`, `30 FPS`, `DIAG`, `SETTINGS`) is placed safely below Android status bar icons.
+  - Added hardware `sensorOrientation` (90° / 270°) compensation to `CameraManager.kt` and `CameraCaptureSessionManager.kt` (`CaptureRequest.JPEG_ORIENTATION`). Camera preview now renders right-side up in landscape mode.
+
 ## [1.0.57] - 2026-09-03
 ### Fixed
 - Fixed Android Status Bar & System Cutout Overlap Bug:

@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml:2:13-83
-INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml:2:13-83
+ADDED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml:2:13-83
+INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml:2:13-83
 	package
-		INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml
+		INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml
 	xmlns:android
-		ADDED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml:2:23-81
+		ADDED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml:2:23-81
 uses-sdk
-INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml reason: use-sdk injection requested
-INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml
-INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml
+INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml reason: use-sdk injection requested
+INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml
+INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml
+		INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest8250125718429250716.xml
+		INJECTED from C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\tmp\ProcessLibraryManifest\debug\tempAndroidManifest1846215271716234110.xml

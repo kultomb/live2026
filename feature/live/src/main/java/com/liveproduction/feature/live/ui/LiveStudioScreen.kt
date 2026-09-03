@@ -131,7 +131,7 @@ fun LiveStudioScreen(
             Row(
                 modifier = Modifier
                     .fillMaxSize()
-                    .safeDrawingPadding()
+                    .padding(top = 32.dp)
                     .background(BackgroundCanvas)
             ) {
                 // Main Production Column (Left / Middle 80%)
@@ -139,7 +139,7 @@ fun LiveStudioScreen(
                     modifier = Modifier
                         .weight(1f)
                         .fillMaxHeight()
-                        .padding(8.dp)
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     // Top Broadcast Bar
                     TopBroadcastBar(
