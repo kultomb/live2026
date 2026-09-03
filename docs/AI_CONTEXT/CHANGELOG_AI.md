@@ -1,5 +1,11 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.54] - 2026-09-03
+### Fixed
+- Fixed Camera SurfaceView Aspect Ratio Distortion Bug in `LiveStudioScreen.kt`:
+  - Added strict `Modifier.fillMaxHeight().aspectRatio(16f / 9f)` constraint to `SurfaceView`.
+  - Eliminated cinematic movie stretching (21:9 squishing). Camera picture now renders in exact, undistorted 16:9 standard broadcast aspect ratio matching camera hardware sensor.
+
 ## [1.0.53] - 2026-09-03
 ### Added
 - Expanded **SETTINGS** screen (`StreamSetupScreen.kt`) with full professional broadcast controls:

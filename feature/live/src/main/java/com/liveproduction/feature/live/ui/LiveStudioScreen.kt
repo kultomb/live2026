@@ -121,7 +121,7 @@ fun LiveStudioScreen(
                     },
                     contentAlignment = Alignment.Center
                 ) {
-                    // Single Immutable SurfaceView Native Hardware Layer
+                    // Single Immutable SurfaceView Native Hardware Layer with Exact 16:9 Broadcast Aspect Ratio
                     AndroidView(
                         factory = { context ->
                             SurfaceView(context).apply {
@@ -139,7 +139,14 @@ fun LiveStudioScreen(
                                 })
                             }
                         },
-                        modifier = Modifier.fillMaxSize()
+                        modifier = if (isFullscreenPreview) {
+                            Modifier.fillMaxSize()
+                        } else {
+                            Modifier
+                                .fillMaxHeight()
+                                .aspectRatio(16f / 9f)
+                                .clip(RoundedCornerShape(8.dp))
+                        }
                     )
 
                     if (!isFullscreenPreview) {
