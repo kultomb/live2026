@@ -1,5 +1,13 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.61] - 2026-09-03
+### Fixed
+- Redesigned Landscape SETTINGS into Professional Broadcast Slide-Over Panel (`StreamSetupScreen.kt`):
+  - Replaced ugly full-screen scroll view with a sleek, right-aligned modal drawer panel (OBS / Blackmagic / Larix style).
+  - Background live video monitor is blurred/dimmed under semi-transparent backdrop (`Color.Black.copy(alpha = 0.65f)`).
+  - Added clean categorized tabs: `📹 VIDEO`, `🎙 AUDIO`, `📡 STREAM`, `🎨 OVERLAY`.
+  - Added explicit `padding(top = 32.dp)` so top panel bar is 100% clear of Android status bar.
+
 ## [1.0.60] - 2026-09-03
 ### Fixed
 - Fixed SETTINGS Freeze & Camera Destruction Bug:
