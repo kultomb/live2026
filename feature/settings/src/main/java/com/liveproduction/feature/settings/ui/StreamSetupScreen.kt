@@ -49,6 +49,11 @@ fun StreamSetupScreen(
     var bannerTextInput by remember { mutableStateOf("LIVE PRODUCTION HD") }
     var isKeyVisible by remember { mutableStateOf(false) }
 
+    LaunchedEffect(selectedPlatform) {
+        rtmpUrlInput = selectedPlatform.defaultUrl
+        streamKeyInput = viewModel.getSavedStreamKey(selectedPlatform)
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(

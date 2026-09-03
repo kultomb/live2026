@@ -9,9 +9,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import com.liveproduction.feature.diagnostics.DiagnosticsViewModel
@@ -57,21 +60,24 @@ class MainActivity : ComponentActivity() {
         setContent {
             var currentScreen by remember { mutableStateOf(AppScreen.STUDIO) }
 
-            when (currentScreen) {
-                AppScreen.STUDIO -> {
-                    LiveStudioScreen(
-                        viewModel = studioViewModel,
-                        onOpenSettings = { currentScreen = AppScreen.SETTINGS },
-                        onOpenDiagnostics = { currentScreen = AppScreen.DIAGNOSTICS }
-                    )
-                }
-                AppScreen.SETTINGS -> {
+            Box(modifier = Modifier.fillMaxSize()) {
+                // Persistent Main Live Studio Layer (Layer 0 - Never unmounted)
+                LiveStudioScreen(
+                    viewModel = studioViewModel,
+                    onOpenSettings = { currentScreen = AppScreen.SETTINGS },
+                    onOpenDiagnostics = { currentScreen = AppScreen.DIAGNOSTICS }
+                )
+
+                // Settings Screen Overlay Layer
+                if (currentScreen == AppScreen.SETTINGS) {
                     StreamSetupScreen(
                         viewModel = settingsViewModel,
                         onBack = { currentScreen = AppScreen.STUDIO }
                     )
                 }
-                AppScreen.DIAGNOSTICS -> {
+
+                // Diagnostics Screen Overlay Layer
+                if (currentScreen == AppScreen.DIAGNOSTICS) {
                     DiagnosticsScreen(
                         viewModel = diagnosticsViewModel,
                         onBack = { currentScreen = AppScreen.STUDIO }

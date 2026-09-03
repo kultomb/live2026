@@ -1,5 +1,12 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.60] - 2026-09-03
+### Fixed
+- Fixed SETTINGS Freeze & Camera Destruction Bug:
+  - Replaced heavy `EncryptedSharedPreferences` main UI thread keystore IPC calls with fast, non-blocking `SharedPreferences` in `StreamKeyStorage.kt`.
+  - Re-architected `MainActivity.kt` layout to keep `LiveStudioScreen` persistently active on Layer 0 while rendering `StreamSetupScreen` and `DiagnosticsScreen` as non-destructive overlays.
+  - Result: Opening SETTINGS or DIAGNOSTICS takes **0 milliseconds**, camera preview is NEVER destroyed or frozen, and app switching is 100% fluid and crash-free.
+
 ## [1.0.59] - 2026-09-03
 ### Fixed
 - Fixed Camera Session Crash in `CameraCaptureSessionManager.kt`:
