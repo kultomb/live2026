@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.liveproduction.studio.app-debug-48:/xml_device_filter.xml.flat",
+        "source": "com.liveproduction.studio.app-main-50:/xml/device_filter.xml"
+    }
+]

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filter for Video Class (UVC) USB devices (Class 0x0E / 14) -->
+    <usb-device usb-class="14" />
+</resources>

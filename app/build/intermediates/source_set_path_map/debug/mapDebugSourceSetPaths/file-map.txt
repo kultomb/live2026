@@ -1,0 +1,61 @@
+com.liveproduction.studio.app-lifecycle-viewmodel-ktx-2.8.4-0 C:\Users\CMD\.gradle\caches\8.10\transforms\01ecd30bd6e83c67af922bfee3c028bb\transformed\lifecycle-viewmodel-ktx-2.8.4\res
+com.liveproduction.studio.app-startup-runtime-1.1.1-1 C:\Users\CMD\.gradle\caches\8.10\transforms\01ed5dc304717c0a1a533cee74dd6d48\transformed\startup-runtime-1.1.1\res
+com.liveproduction.studio.app-material-icons-extended-release-2 C:\Users\CMD\.gradle\caches\8.10\transforms\030b8e32bec9f85b4ce1c7c277541d43\transformed\material-icons-extended-release\res
+com.liveproduction.studio.app-core-runtime-2.2.0-3 C:\Users\CMD\.gradle\caches\8.10\transforms\0ae19422a81dffe0b6955bfff71358bc\transformed\core-runtime-2.2.0\res
+com.liveproduction.studio.app-foundation-layout-release-4 C:\Users\CMD\.gradle\caches\8.10\transforms\111fe563cbb792511669a70b1d5d76c8\transformed\foundation-layout-release\res
+com.liveproduction.studio.app-lifecycle-process-2.8.4-5 C:\Users\CMD\.gradle\caches\8.10\transforms\12fccf30f074324e59dd13b173941b5b\transformed\lifecycle-process-2.8.4\res
+com.liveproduction.studio.app-lifecycle-livedata-core-2.8.4-6 C:\Users\CMD\.gradle\caches\8.10\transforms\15df59c62ccbded9ca5ba7d573bf1437\transformed\lifecycle-livedata-core-2.8.4\res
+com.liveproduction.studio.app-material3-release-7 C:\Users\CMD\.gradle\caches\8.10\transforms\1b851b503dddffc9b9d21255a62c7c9c\transformed\material3-release\res
+com.liveproduction.studio.app-navigation-runtime-2.7.7-8 C:\Users\CMD\.gradle\caches\8.10\transforms\1e583b177cc462b89623c4d69d4a0f77\transformed\navigation-runtime-2.7.7\res
+com.liveproduction.studio.app-runtime-release-9 C:\Users\CMD\.gradle\caches\8.10\transforms\229c99c43ff92b53f873c3e7a47fdd93\transformed\runtime-release\res
+com.liveproduction.studio.app-ui-text-release-10 C:\Users\CMD\.gradle\caches\8.10\transforms\246d71f5d31a9d709184d1af5e9c4c6a\transformed\ui-text-release\res
+com.liveproduction.studio.app-customview-poolingcontainer-1.0.0-11 C:\Users\CMD\.gradle\caches\8.10\transforms\2748ac41b3d918087388dfc9fb334d32\transformed\customview-poolingcontainer-1.0.0\res
+com.liveproduction.studio.app-activity-ktx-1.9.1-12 C:\Users\CMD\.gradle\caches\8.10\transforms\2f0ad40054a8a4e37f28f15b3987b850\transformed\activity-ktx-1.9.1\res
+com.liveproduction.studio.app-security-crypto-1.1.0-alpha06-13 C:\Users\CMD\.gradle\caches\8.10\transforms\320be0038d9b1adc7c914fee0f4b3096\transformed\security-crypto-1.1.0-alpha06\res
+com.liveproduction.studio.app-lifecycle-viewmodel-savedstate-2.8.4-14 C:\Users\CMD\.gradle\caches\8.10\transforms\43e266678559d6a38307e549a2b01aa9\transformed\lifecycle-viewmodel-savedstate-2.8.4\res
+com.liveproduction.studio.app-ui-util-release-15 C:\Users\CMD\.gradle\caches\8.10\transforms\441e91547b177d4ed62b7ed888eded95\transformed\ui-util-release\res
+com.liveproduction.studio.app-navigation-runtime-ktx-2.7.7-16 C:\Users\CMD\.gradle\caches\8.10\transforms\4d38ad63ea9937a4445931161320f5a3\transformed\navigation-runtime-ktx-2.7.7\res
+com.liveproduction.studio.app-ui-graphics-release-17 C:\Users\CMD\.gradle\caches\8.10\transforms\5104b5559bc4de65cb3fbadc5d0235df\transformed\ui-graphics-release\res
+com.liveproduction.studio.app-core-1.13.1-18 C:\Users\CMD\.gradle\caches\8.10\transforms\513a9587e7291419560c8738c3aaf32f\transformed\core-1.13.1\res
+com.liveproduction.studio.app-annotation-experimental-1.4.0-19 C:\Users\CMD\.gradle\caches\8.10\transforms\58738ed1d64f8c5ec36e6ebe61488311\transformed\annotation-experimental-1.4.0\res
+com.liveproduction.studio.app-activity-1.9.1-20 C:\Users\CMD\.gradle\caches\8.10\transforms\59647cfe1e80041ed21c882a86f7175c\transformed\activity-1.9.1\res
+com.liveproduction.studio.app-ui-release-21 C:\Users\CMD\.gradle\caches\8.10\transforms\5fbddfc5483c1016c609a326a1b70c67\transformed\ui-release\res
+com.liveproduction.studio.app-ui-unit-release-22 C:\Users\CMD\.gradle\caches\8.10\transforms\6333d0ffc55c5380dc8d44b883a75a73\transformed\ui-unit-release\res
+com.liveproduction.studio.app-lifecycle-runtime-ktx-release-23 C:\Users\CMD\.gradle\caches\8.10\transforms\694725cc45c0c158392ba658bb05f023\transformed\lifecycle-runtime-ktx-release\res
+com.liveproduction.studio.app-lifecycle-runtime-release-24 C:\Users\CMD\.gradle\caches\8.10\transforms\74bb52508bcc430734893034f2cfbc3a\transformed\lifecycle-runtime-release\res
+com.liveproduction.studio.app-savedstate-1.2.1-25 C:\Users\CMD\.gradle\caches\8.10\transforms\77c4071966de49c81ebf91adca09d067\transformed\savedstate-1.2.1\res
+com.liveproduction.studio.app-material-icons-core-release-26 C:\Users\CMD\.gradle\caches\8.10\transforms\839f63702637007b2c6ab47426b4d22a\transformed\material-icons-core-release\res
+com.liveproduction.studio.app-savedstate-ktx-1.2.1-27 C:\Users\CMD\.gradle\caches\8.10\transforms\83a2182b7abf6177f517719fa89630ce\transformed\savedstate-ktx-1.2.1\res
+com.liveproduction.studio.app-lifecycle-viewmodel-release-28 C:\Users\CMD\.gradle\caches\8.10\transforms\841ab1c2d707193038cd119882a21699\transformed\lifecycle-viewmodel-release\res
+com.liveproduction.studio.app-activity-compose-1.9.1-29 C:\Users\CMD\.gradle\caches\8.10\transforms\8e6045dcd510f6a0ab71ec0424a5789c\transformed\activity-compose-1.9.1\res
+com.liveproduction.studio.app-lifecycle-viewmodel-compose-release-30 C:\Users\CMD\.gradle\caches\8.10\transforms\910e414cd17aca1b74f47c55104733ec\transformed\lifecycle-viewmodel-compose-release\res
+com.liveproduction.studio.app-emoji2-1.3.0-31 C:\Users\CMD\.gradle\caches\8.10\transforms\92622d54ac51cf75629bdcc6dea3f2ae\transformed\emoji2-1.3.0\res
+com.liveproduction.studio.app-navigation-common-2.7.7-32 C:\Users\CMD\.gradle\caches\8.10\transforms\9cdd4bd746361360b95ceef827657294\transformed\navigation-common-2.7.7\res
+com.liveproduction.studio.app-navigation-compose-2.7.7-33 C:\Users\CMD\.gradle\caches\8.10\transforms\9f618f68b7164ff3cf06e6e97de8ca34\transformed\navigation-compose-2.7.7\res
+com.liveproduction.studio.app-runtime-saveable-release-34 C:\Users\CMD\.gradle\caches\8.10\transforms\a8fe4cdb69eb94a576ae4efac9c27829\transformed\runtime-saveable-release\res
+com.liveproduction.studio.app-ui-geometry-release-35 C:\Users\CMD\.gradle\caches\8.10\transforms\b1890c61b052794291499b33a484fe76\transformed\ui-geometry-release\res
+com.liveproduction.studio.app-profileinstaller-1.3.1-36 C:\Users\CMD\.gradle\caches\8.10\transforms\bab2e864001cacdec8f7bf182879e09b\transformed\profileinstaller-1.3.1\res
+com.liveproduction.studio.app-core-ktx-1.13.1-37 C:\Users\CMD\.gradle\caches\8.10\transforms\c1e79779ce793799231f4a334588c369\transformed\core-ktx-1.13.1\res
+com.liveproduction.studio.app-animation-release-38 C:\Users\CMD\.gradle\caches\8.10\transforms\c1f41b54860a96b1da18bdad54cc0053\transformed\animation-release\res
+com.liveproduction.studio.app-ui-tooling-preview-release-39 C:\Users\CMD\.gradle\caches\8.10\transforms\c2aacc299c30a23dc1eff64c1bc50785\transformed\ui-tooling-preview-release\res
+com.liveproduction.studio.app-navigation-common-ktx-2.7.7-40 C:\Users\CMD\.gradle\caches\8.10\transforms\cc09ffcb7dafde977997d841b0910d29\transformed\navigation-common-ktx-2.7.7\res
+com.liveproduction.studio.app-animation-core-release-41 C:\Users\CMD\.gradle\caches\8.10\transforms\ddda0b965be0e9222bd201647be6dc97\transformed\animation-core-release\res
+com.liveproduction.studio.app-material-ripple-release-42 C:\Users\CMD\.gradle\caches\8.10\transforms\e880d95849344b375c3836d9ac0b7585\transformed\material-ripple-release\res
+com.liveproduction.studio.app-foundation-release-43 C:\Users\CMD\.gradle\caches\8.10\transforms\f22f70539574a485d2bb595e9f6691b7\transformed\foundation-release\res
+com.liveproduction.studio.app-resValues-44 C:\Users\CMD\Desktop\LIVE 2026\app\build\generated\res\resValues\debug
+com.liveproduction.studio.app-packageDebugResources-45 C:\Users\CMD\Desktop\LIVE 2026\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.liveproduction.studio.app-packageDebugResources-46 C:\Users\CMD\Desktop\LIVE 2026\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.liveproduction.studio.app-debug-47 C:\Users\CMD\Desktop\LIVE 2026\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.liveproduction.studio.app-debug-48 C:\Users\CMD\Desktop\LIVE 2026\app\src\debug\res
+com.liveproduction.studio.app-main-49 C:\Users\CMD\Desktop\LIVE 2026\app\src\main\res
+com.liveproduction.studio.app-debug-50 C:\Users\CMD\Desktop\LIVE 2026\core\audio\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-51 C:\Users\CMD\Desktop\LIVE 2026\core\camera\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-52 C:\Users\CMD\Desktop\LIVE 2026\core\diagnostics\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-53 C:\Users\CMD\Desktop\LIVE 2026\core\media\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-54 C:\Users\CMD\Desktop\LIVE 2026\core\network\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-55 C:\Users\CMD\Desktop\LIVE 2026\core\streaming\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-56 C:\Users\CMD\Desktop\LIVE 2026\core\usb\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-57 C:\Users\CMD\Desktop\LIVE 2026\feature\camera\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-58 C:\Users\CMD\Desktop\LIVE 2026\feature\diagnostics\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-59 C:\Users\CMD\Desktop\LIVE 2026\feature\live\build\intermediates\packaged_res\debug\packageDebugResources
+com.liveproduction.studio.app-debug-60 C:\Users\CMD\Desktop\LIVE 2026\feature\settings\build\intermediates\packaged_res\debug\packageDebugResources
