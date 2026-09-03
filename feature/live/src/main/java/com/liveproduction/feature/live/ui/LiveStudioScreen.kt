@@ -131,6 +131,7 @@ fun LiveStudioScreen(
             Row(
                 modifier = Modifier
                     .fillMaxSize()
+                    .safeDrawingPadding()
                     .background(BackgroundCanvas)
             ) {
                 // Main Production Column (Left / Middle 80%)

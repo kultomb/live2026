@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import com.liveproduction.feature.diagnostics.DiagnosticsViewModel
 import com.liveproduction.feature.diagnostics.ui.DiagnosticsScreen
 import com.liveproduction.feature.live.LiveStudioViewModel
@@ -50,6 +51,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        WindowCompat.setDecorFitsSystemWindows(window, true)
         requestRequiredPermissions()
 
         setContent {

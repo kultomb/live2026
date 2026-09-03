@@ -1,5 +1,12 @@
 # CHANGELOG AI — ARCHITECTURAL REVISION HISTORY
 
+## [1.0.57] - 2026-09-03
+### Fixed
+- Fixed Android Status Bar & System Cutout Overlap Bug:
+  - Added `WindowCompat.setDecorFitsSystemWindows(window, true)` in `MainActivity.kt`.
+  - Added `Modifier.safeDrawingPadding()` to root studio container in `LiveStudioScreen.kt`.
+  - Result: Android status bar (WiFi, time, battery icons) will NEVER cut off or overlap the app's top broadcast bar (`IDLE`, `30 FPS`, `DIAG`, `SETTINGS`).
+
 ## [1.0.56] - 2026-09-03
 ### Fixed
 - Fixed Screen Navigation in `MainActivity.kt`:
